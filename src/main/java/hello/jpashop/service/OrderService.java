@@ -15,7 +15,9 @@ import hello.jpashop.repository.MemberRepository;
 import hello.jpashop.repository.OrderRepository;
 import hello.jpashop.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @Transactional(readOnly=false)
 @RequiredArgsConstructor
@@ -64,7 +66,8 @@ public class OrderService {
 	 * 검색
 	 */
 	public List<Order> findOrders(OrderSearch orderSearch) {
-		return orderRepository.findAllByString(orderSearch);
+		//return orderRepository.findAllByString(orderSearch);
+		return orderRepository.findAll(orderSearch);
 	}
 
 }

@@ -76,7 +76,6 @@ public class OrderSimpleApiController {
 			orderStatus = order.getStatus();
 			address = order.getDelivery().getAddress(); // LAZY 초기화
 		}
-		
 	}
 
 }
