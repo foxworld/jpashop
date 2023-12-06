@@ -59,8 +59,8 @@ public class OrderApiController {
 		List<Order> orders = orderRepository.findAllWithItem();
 		
 		List<OrderDto> collect = orders.stream()
-			.map(OrderDto::new).collect(toList());
-			//.map(o -> new OrderDto(o)).collect(Collectors.toList());			
+			//.map(OrderDto::new).collect(toList());
+			.map(o -> new OrderDto(o)).collect(Collectors.toList());			
 
 		
 		return collect;
